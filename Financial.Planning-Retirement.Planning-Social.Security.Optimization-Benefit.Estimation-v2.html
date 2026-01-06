@@ -4,7 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Security Benefit Estimation: Confidently Right-Size Your Retirement Income</title>
-  <style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:"Helvetica Neue",Arial,sans-serif;background:#f7f9fb;color:#1f2937;line-height:1.6;padding:24px;}.page{max-width:1100px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.08);padding:36px;}h1{font-size:2.2rem;color:#0f2d52;margin-bottom:18px;line-height:1.25;}h2{font-size:1.5rem;color:#123f6a;margin:28px 0 12px;}h3{font-size:1.2rem;color:#1f2937;margin:20px 0 10px;}p{margin-bottom:14px;}ul{margin:14px 0 14px 22px;}li{margin-bottom:8px;}.tldr{background:linear-gradient(135deg,#1c64f2,#7c3aed);color:#fff;border-radius:10px;padding:20px;margin:24px 0;}.tldr h2{color:#fff;margin:0 0 10px;font-size:1.2rem;}.tldr ul{list-style:none;margin:0;padding:0;}.tldr li{padding-left:18px;position:relative;}.tldr li:before{content:"›";position:absolute;left:0;font-weight:bold;}.section-card{background:#f0f4f8;border:1px solid #d7e1ea;border-radius:8px;padding:18px;margin:18px 0;}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}.metric{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;text-align:center;box-shadow:0 6px 16px rgba(15,45,82,0.08);}.metric h4{margin-bottom:6px;color:#123f6a;}.metric .value{font-size:1.6rem;font-weight:700;color:#1c64f2;}.chart-placeholder{background:#0f2d52;color:#e5edff;border-radius:10px;padding:18px;margin:12px 0;}.disclaimer{background:#f5f5f5;border:1px solid #d1d5db;border-radius:8px;padding:16px;font-size:0.95rem;margin-top:28px;}label{font-weight:600;color:#0f2d52;display:block;margin-bottom:6px;}input,select{width:100%;padding:10px;border-radius:6px;border:1px solid #cbd5e0;font-size:1rem;}input[type="range"]{width:100%;}.helper{font-size:0.9rem;color:#4b5563;margin-bottom:10px;}.table-wrap{overflow-x:auto;margin-top:10px;}table{width:100%;border-collapse:collapse;background:#fff;}th,td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left;}th{background:#0f2d52;color:#fff;font-size:0.95rem;letter-spacing:0.3px;}tr.highlight{background:#e0ebff;}.faq dt{font-weight:700;margin-top:14px;color:#0f2d52;}.faq dd{margin:6px 0 10px 0;}.checklist{background:#f7fafc;border:1px solid #d7e1ea;border-radius:10px;padding:16px;}@media (max-width:720px){body{padding:12px;}.page{padding:22px;}h1{font-size:1.8rem;}h2{font-size:1.3rem;}}</style>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Helvetica Neue", Arial, sans-serif; background:#f7f9fb; color:#1f2937; line-height:1.6; padding:24px; }
+    .page { max-width: 1100px; margin:0 auto; background:#ffffff; border-radius:10px; box-shadow:0 12px 30px rgba(0,0,0,0.08); padding:36px; }
+    h1 { font-size:2.2rem; color:#0f2d52; margin-bottom:18px; line-height:1.25; }
+    h2 { font-size:1.5rem; color:#123f6a; margin:28px 0 12px; }
+    h3 { font-size:1.2rem; color:#1f2937; margin:20px 0 10px; }
+    p { margin-bottom:14px; }
+    ul { margin:14px 0 14px 22px; }
+    li { margin-bottom:8px; }
+    .tldr { background:linear-gradient(135deg,#1c64f2,#7c3aed); color:#fff; border-radius:10px; padding:20px; margin:24px 0; }
+    .tldr h2 { color:#fff; margin:0 0 10px; font-size:1.2rem; }
+    .tldr ul { list-style:none; margin:0; padding:0; }
+    .tldr li { padding-left:18px; position:relative; }
+    .tldr li:before { content:"›"; position:absolute; left:0; font-weight:bold; }
+    .section-card { background:#f0f4f8; border:1px solid #d7e1ea; border-radius:8px; padding:18px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+    .metric { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:16px; text-align:center; box-shadow:0 6px 16px rgba(15,45,82,0.08); }
+    .metric h4 { margin-bottom:6px; color:#123f6a; }
+    .metric .value { font-size:1.6rem; font-weight:700; color:#1c64f2; }
+    .chart-placeholder { background:#0f2d52; color:#e5edff; border-radius:10px; padding:18px; margin:12px 0; }
+    .disclaimer { background:#f5f5f5; border:1px solid #d1d5db; border-radius:8px; padding:16px; font-size:0.95rem; margin-top:28px; }
+    label { font-weight:600; color:#0f2d52; display:block; margin-bottom:6px; }
+    input, select { width:100%; padding:10px; border-radius:6px; border:1px solid #cbd5e0; font-size:1rem; }
+    input[type="range"] { width:100%; }
+    .helper { font-size:0.9rem; color:#4b5563; margin-bottom:10px; }
+    .table-wrap { overflow-x:auto; margin-top:10px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { padding:12px; border-bottom:1px solid #e5e7eb; text-align:left; }
+    th { background:#0f2d52; color:#fff; font-size:0.95rem; letter-spacing:0.3px; }
+    tr.highlight { background:#e0ebff; }
+    .faq dt { font-weight:700; margin-top:14px; color:#0f2d52; }
+    .faq dd { margin:6px 0 10px 0; }
+    .checklist { background:#f7fafc; border:1px solid #d7e1ea; border-radius:10px; padding:16px; }
+    @media (max-width: 720px) {
+      body { padding:12px; }
+      .page { padding:22px; }
+      h1 { font-size:1.8rem; }
+      h2 { font-size:1.3rem; }
+    }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -13,43 +53,43 @@
     <div class="tldr">
       <h2>Key Takeaways</h2>
       <ul>
-        <li>Translate your top 35 inflation-adjusted earning years into AIME, then a Primary Insurance Amount (PIA).</li>
-        <li>Claiming early trims monthly income; delaying toward 70 raises it with delayed retirement credits.</li>
-        <li>Coordinating benefits with taxes, survivor protection, and withdrawals turns a single decision into strategy.</li>
+        <li>Estimate benefits by translating your highest 35 inflation-adjusted earning years into Average Indexed Monthly Earnings and a Primary Insurance Amount.</li>
+        <li>Claiming age adjustments are meaningful: claiming at 62 reduces monthly income while delaying toward 70 increases it through delayed retirement credits.</li>
+        <li>Coordinating benefits with taxes, survivor protection, and portfolio withdrawals converts a tactical choice into a durable retirement income strategy.</li>
       </ul>
     </div>
 
     <h2>Why estimate Social Security benefits before you claim?</h2>
-    <p>Social Security delivers inflation-adjusted income that stabilizes cash flow. Estimating early clarifies how much your portfolio must fund and how to pace taxes.</p>
-    <p>Mis-timed claims can add taxes, IRMAA surcharges, or thin liquidity. Estimation frames break-even math, survivor income, and withdrawal sourcing.</p>
+    <p>Social Security supplies inflation-adjusted income that can support cash flow, longevity protection, and sequence-of-returns resilience. Estimating benefits ahead of time clarifies how much portfolio withdrawals must shoulder and how to pace tax planning.</p>
+    <p>Because benefit rules are progressive and sensitive to timing, small errors in estimation can cascade into avoidable taxes, Medicare IRMAA surcharges, or depleted liquid reserves during early retirement years. Estimation is also the first step toward stress-testing break-even ages, survivor income, and the tax location of withdrawals.</p>
 
     <div class="checklist">
       <strong>Quick documents checklist before you estimate:</strong>
       <ul>
-        <li>Latest SSA statement with earnings history and estimated PIA.</li>
+        <li>Latest Social Security statement (ssa.gov) showing your earnings history and estimated PIA.</li>
         <li>Expected retirement date and whether you will work after claiming.</li>
-        <li>Health outlook and survivor needs to set life expectancy ranges.</li>
-        <li>Other income sources—pensions, RSUs, deferred comp, rentals—that affect tax brackets.</li>
+        <li>Health outlook and survivor needs to set reasonable life expectancy ranges.</li>
+        <li>Other income sources: pensions, RSUs, deferred comp, or rental income that affect tax brackets.</li>
       </ul>
     </div>
 
     <h2>How the benefit formula works</h2>
-    <p><strong>Earnings record:</strong> SSA reviews your full history up to the wage base; missing years are zeros.</p>
-    <p><strong>Wage indexing:</strong> Earlier earnings are adjusted for national wage growth through age 60.</p>
-    <p><strong>AIME:</strong> The top 35 indexed years are averaged over 420 months.</p>
-    <p><strong>PIA:</strong> AIME passes bend points; the result is the monthly benefit at your Full Retirement Age (FRA).</p>
-    <p><strong>Claiming age:</strong> Filing before FRA reduces payments; filing after earns delayed credits of about 8% per year until 70. Health, cash needs, and survivor goals guide the choice.</p>
+    <p><strong>Earnings record:</strong> Social Security reviews your full history, capped at the annual wage base. Missing years count as zeros, which depress the average.</p>
+    <p><strong>Wage indexing:</strong> Earlier earnings are adjusted for national wage growth through age 60 so the calculation reflects today’s dollars.</p>
+    <p><strong>Average Indexed Monthly Earnings (AIME):</strong> The top 35 indexed earning years are averaged over 420 months. AIME is the bridge from your career to your benefit.</p>
+    <p><strong>Primary Insurance Amount (PIA):</strong> AIME is run through bend points that replace a higher share of the first dollars earned. The result is the monthly benefit payable at your Full Retirement Age (FRA).</p>
+    <p><strong>Claiming age adjustments:</strong> Filing before FRA triggers reductions; filing after FRA earns roughly 8% per year in delayed credits until age 70. The right decision depends on health, cash needs, and survivor goals.</p>
 
     <h3>Married, divorced, and survivor considerations</h3>
     <ul>
-      <li><strong>Spousal:</strong> Up to 50% of the other spouse’s PIA at their FRA; coordination matters when incomes differ.</li>
-      <li><strong>Survivor:</strong> A survivor keeps the higher benefit. Delaying the higher earner often protects late-life income.</li>
-      <li><strong>Divorced:</strong> Prior marriages lasting 10+ years can unlock spousal or survivor benefits without reducing the ex-spouse’s check.</li>
+      <li><strong>Spousal benefits:</strong> Up to 50% of the other spouse’s PIA at their FRA. Coordination matters when incomes differ.</li>
+      <li><strong>Survivor benefits:</strong> A surviving spouse can keep the higher benefit. Delaying the higher earner’s benefit raises lifetime survivor income.</li>
+      <li><strong>Divorced benefits:</strong> Prior marriages lasting 10+ years can unlock spousal or survivor benefits without reducing the ex-spouse’s check.</li>
     </ul>
 
     <h2>Interactive Estimator: test claiming ages</h2>
     <div class="section-card">
-      <p class="helper">Enter your estimated PIA and pick a claiming age to compare monthly and lifetime impacts. Dollars stay in today’s terms and exclude taxes and COLA.</p>
+      <p class="helper">Enter your expected monthly benefit at FRA (PIA) and select a claiming age to see monthly and lifetime differences. This illustration keeps dollars in today’s terms and excludes taxes and COLA to isolate the claiming-age effect.</p>
       <label for="pia">Estimated monthly benefit at FRA (PIA)</label>
       <input type="number" id="pia" value="3200" min="500" max="6000" step="50">
 
@@ -79,48 +119,159 @@
 
     <div class="chart-placeholder">
       <h3>Suggested visualization: claiming age vs. lifetime value</h3>
-      <p>Plot claiming age (62–70) on the x-axis and lifetime benefits on the y-axis for life expectancies at 80, 85, and 90. Overlay three lines from the estimator and mark the break-even age.</p>
+      <p>Plot claiming age on the x-axis (62–70) and lifetime benefits on the y-axis for life expectancies at 80, 85, and 90. Overlay three lines to show how later claiming steepens the curve at longer life horizons. Data comes directly from the estimator above. Mark the break-even age where the selected claim and a delayed claim cross.</p>
     </div>
 
     <h2>Real-world personas</h2>
     <h3>The Early Entrepreneur</h3>
-    <p>Early 60s, variable self-employment income, retirement assets $1.2M–$1.8M. Filing 64–66 balances cash flow with business income; monitor the earnings test and self-employment taxes.</p>
+    <p><strong>Profile:</strong> Early 60s, variable self-employment income, expects retirement assets between $1.2M–$1.8M. Moderate health outlook.</p>
+    <p><strong>Application:</strong> Filing between 64–66 can balance cash flow needs with continued business income. Earnings test and self-employment taxes need monitoring to avoid withholding surprises.</p>
 
     <h3>The Dual-Career Couple</h3>
-    <p>Late 50s, earnings near the wage base, savings $3M–$5M, strong longevity history. Delaying the higher earner to 70 while the lower earner files near FRA can boost survivor income and open a Roth conversion window.</p>
+    <p><strong>Profile:</strong> Late 50s, household earnings near the wage base, retirement savings $3M–$5M, strong longevity family history.</p>
+    <p><strong>Application:</strong> Coordinating a higher earner’s delayed claim to 70 with a lower earner filing near FRA can enhance survivor income and free up earlier years for Roth conversions while in lower brackets.</p>
 
     <h3>The Bridge-Year Executive</h3>
-    <p>Early 60s executive with equity pay and deferred bonuses, portfolio $4M–$6M, phased retirement planned. Bridging with bonuses and vested RSUs while delaying toward 70 can reduce sequence risk and enable pre-RMD Roth conversions; monitor the earnings test if part-time work continues.</p>
+    <p><strong>Profile:</strong> Early 60s executive with equity compensation and deferred bonuses, portfolio $4M–$6M, planning a phased retirement.</p>
+    <p><strong>Application:</strong> Bridging with bonuses and vested RSUs while delaying Social Security toward 70 can reduce sequence risk and allow strategic Roth conversions before RMDs start. Monitor the earnings test if part-time income continues before FRA.</p>
 
     <h2>Risks, nuance, and the cost of guessing</h2>
-    <p>COLA timing and earnings after claiming can distort estimates. Pensions from non-covered work may reduce benefits under Windfall Elimination Provision or Government Pension Offset. Mistiming claims can depress survivor income or trigger avoidable IRMAA surcharges.</p>
+    <p>Estimations can be distorted by inflation adjustments, COLA expectations, and the impact of working after claiming. For households with pensions from non-covered employment, Windfall Elimination Provision and Government Pension Offset rules can materially reduce benefits. Mistiming claims can lower survivor income for decades or trigger avoidable IRMAA surcharges.</p>
     <ul>
-      <li><strong>Working after 62:</strong> The earnings test can withhold benefits until FRA; withheld amounts raise later payments but complicate cash flow.</li>
-      <li><strong>Portfolio:</strong> Claiming early boosts liquidity but raises longevity risk if markets lag. Delaying shifts burden to the portfolio in the 60s but hedges late-life income.</li>
-      <li><strong>Inflation:</strong> COLA compounds; a higher base benefit from delaying often better matches late-life spending.</li>
+      <li><strong>Working after 62:</strong> The earnings test can withhold benefits until FRA; withheld amounts raise later payments but can complicate cash flow and tax planning.</li>
+      <li><strong>Portfolio interaction:</strong> Claiming early boosts near-term liquidity but can increase longevity risk if markets lag. Delaying shifts the burden to the portfolio in the 60s but hedges late-life income.</li>
+      <li><strong>Inflation timing:</strong> COLA compounds over decades; a higher base benefit from delaying often keeps pace with spending needs more effectively.</li>
     </ul>
 
     <h2>From tactic to strategy</h2>
-    <p>Estimation is the start. Integrating Social Security with withdrawals, tax brackets, and liability matching creates resilient cash flow. Recalibrate around retirement, Medicare enrollment, and the first Required Minimum Distribution year.</p>
+    <p>Estimating benefits is the starting line, not the finish. Integrating Social Security with withdrawal sequencing, tax bracket management, and liability matching creates a resilient cash-flow plan. Annual recalibration—especially around retirement, Medicare enrollment, and the first Required Minimum Distribution year—keeps the plan aligned with markets and life changes.</p>
 
     <h2>Where fiduciary guidance helps</h2>
-    <p>DIY calculators show direction, but multi-year modeling with taxes, survivor scenarios, and pensions is intensive. A fiduciary advisor can test cross-impacts—claiming age, Roth conversions, charitable giving, or health care costs—so the choice fits the broader plan.</p>
-    <p class="helper">Collaboration idea: validate your earnings record, set a household claiming blueprint, map taxes and IRMAA through age 90, and revisit annually as work and health evolve.</p>
+    <p>DIY calculators show direction, but multi-year modeling with tax overlays, survivor scenarios, and pension interactions is intensive. A fiduciary advisor can test cross-impacts—claiming age, Roth conversions, charitable giving strategies, or health care costs—so the claiming decision supports the broader plan rather than a single metric.</p>
+    <p class="helper">Practical collaboration approach: validate your earnings record, set a household claiming blueprint, map taxes and IRMAA through age 90, and revisit annually as markets, work plans, and health change.</p>
 
     <dl class="faq">
       <dt>How do I sanity-check my AIME?</dt>
-      <dd>List your top 35 indexed earning years from your SSA statement, divide by 420, and compare to the PIA shown. Gaps may signal missing earnings.</dd>
-      <dt>What if my FRA includes months?</dt>
-      <dd>The dropdown handles fractional FRA values so reductions and credits track the published schedule.</dd>
+      <dd>Gather the top 35 indexed earning years from your SSA statement, divide by 420 months, and compare the result to the PIA shown. Large gaps may signal missing earnings or a need to request a correction.</dd>
+      <dt>What if my FRA is not a whole year?</dt>
+      <dd>FRA can include months. Use the dropdown for precision; the estimator converts fractional years to months so reductions and delayed credits reflect the published schedule.</dd>
       <dt>Does COLA change the claiming decision?</dt>
-      <dd>COLA applies after benefits start. A higher base benefit from delaying compounds more if longevity runs long.</dd>
+      <dd>COLA applies after benefits start. A higher base benefit from delaying typically compounds more with COLA, which supports late-life spending if longevity runs long.</dd>
     </dl>
 
     <div class="disclaimer">
-      <strong>Compliance note:</strong> Education only; not individualized advice. Social Security, tax, and Medicare rules change. Rely on official estimates from ssa.gov before filing.
+      <strong>Compliance note:</strong> This material is for education only and is not individualized advice. Social Security rules, tax law, and Medicare policies can change. Decisions should be based on your full financial picture, and official estimates from ssa.gov should be reviewed before filing.
     </div>
   </div>
 
-  <script>const piaInput=document.getElementById('pia'),fraSelect=document.getElementById('fra'),ageSlider=document.getElementById('age'),ageLabel=document.getElementById('ageLabel'),lifeInput=document.getElementById('life'),lifeLabel=document.getElementById('lifeLabel'),metrics=document.getElementById('metrics'),tableWrap=document.getElementById('table');function reductionFactor(m){const f=Math.min(m,36),r=Math.max(m-36,0);return(f*(5/9)+r*(5/12))/100;}function monthlyBenefit(pia,fra,claim){const fm=fra*12,cm=claim*12;if(cm===fm)return pia;if(cm<fm){const me=Math.round(fm-cm);return pia*(1-reductionFactor(me));}const md=cm-fm;return pia*(1+0.08*(md/12));}function lifetime(totalMonthly,claimAge,life){const y=Math.max(life-claimAge,0);return totalMonthly*12*y;}function breakEvenAge(a,ba,b,bb){if(a===b||ba===bb)return null;const age=((bb*b)-(ba*a))/(bb-ba);return age>Math.max(a,b)?age:null;}function fmt(n){return n.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});}function render(){const pia=Number(piaInput.value||0),fra=Number(fraSelect.value),claimAge=Number(ageSlider.value),lifeExpectancy=Number(lifeInput.value);ageLabel.textContent=claimAge;lifeLabel.textContent=lifeExpectancy;const monthly=monthlyBenefit(pia,fra,claimAge),annual=monthly*12,lifetimeCustom=lifetime(monthly,claimAge,lifeExpectancy),compareAge=Math.min(70,Math.max(claimAge,Math.round(fra))+1),compareBenefit=monthlyBenefit(pia,fra,compareAge),breakeven=breakEvenAge(claimAge,monthly,compareAge,compareBenefit);metrics.innerHTML=`<div class="metric"><h4>Monthly benefit</h4><div class="value">${fmt(monthly)}</div><p class="helper">${pia?((monthly/pia-1)*100).toFixed(1)+'% vs. FRA':'Set PIA to view change'}</p></div><div class="metric"><h4>Annual benefit</h4><div class="value">${fmt(annual)}</div><p class="helper">Before taxes or COLA</p></div><div class="metric"><h4>Lifetime to modeled age</h4><div class="value">${fmt(lifetimeCustom)}</div><p class="helper">Assumes steady dollars to age ${lifeExpectancy}</p></div>`;if(breakeven){metrics.innerHTML+=`<div class="metric"><h4>Break-even age</h4><div class="value">${breakeven.toFixed(1)}</div><p class="helper">Where claiming at ${claimAge} = claiming at ${compareAge}</p></div>`;}const ages=[62,64,Math.round(fra),67,70],uniqueAges=[...new Set(ages)].sort((a,b)=>a-b);let html='<table><thead><tr><th>Claim age</th><th>Monthly</th><th>Lifetime to 80</th><th>Lifetime to 85</th><th>Lifetime to 90</th></tr></thead><tbody>';uniqueAges.forEach(age=>{const m=monthlyBenefit(pia,fra,age);html+=`<tr class="${age===claimAge?'highlight':''}"><td>${age}${age===fra?' (FRA)':''}</td><td>${fmt(m)}</td><td>${fmt(lifetime(m,age,80))}</td><td>${fmt(lifetime(m,age,85))}</td><td>${fmt(lifetime(m,age,90))}</td></tr>`;});html+='</tbody></table><p class="helper">Excludes tax and inflation; use SSA statements for verified amounts.</p>';tableWrap.innerHTML=html;}[piaInput,fraSelect,ageSlider,lifeInput].forEach(el=>el.addEventListener('input',render));render();</script>
+  <script>
+    const piaInput = document.getElementById('pia');
+    const fraSelect = document.getElementById('fra');
+    const ageSlider = document.getElementById('age');
+    const ageLabel = document.getElementById('ageLabel');
+    const lifeInput = document.getElementById('life');
+    const lifeLabel = document.getElementById('lifeLabel');
+    const metrics = document.getElementById('metrics');
+    const tableWrap = document.getElementById('table');
+
+    function reductionFactor(monthsEarly) {
+      const first36 = Math.min(monthsEarly, 36);
+      const remaining = Math.max(monthsEarly - 36, 0);
+      return (first36 * (5/9) + remaining * (5/12)) / 100;
+    }
+
+    function monthlyBenefit(pia, fra, claimAge) {
+      const fraMonths = fra * 12;
+      const claimMonths = claimAge * 12;
+      if (claimMonths === fraMonths) return pia;
+      if (claimMonths < fraMonths) {
+        const monthsEarly = Math.round(fraMonths - claimMonths);
+        return pia * (1 - reductionFactor(monthsEarly));
+      }
+      const monthsDelayed = claimMonths - fraMonths;
+      return pia * (1 + 0.08 * (monthsDelayed / 12));
+    }
+
+    function lifetime(totalMonthly, claimAge, lifeExpectancy) {
+      const years = Math.max(lifeExpectancy - claimAge, 0);
+      return totalMonthly * 12 * years;
+    }
+
+    function breakEvenAge(ageA, benefitA, ageB, benefitB) {
+      if (ageA === ageB || benefitA === benefitB) return null;
+      const numerator = (benefitB * ageB) - (benefitA * ageA);
+      const denominator = benefitB - benefitA;
+      const age = numerator / denominator;
+      return age > Math.max(ageA, ageB) ? age : null;
+    }
+
+    function fmt(num) {
+      return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    }
+
+    function render() {
+      const pia = Number(piaInput.value || 0);
+      const fra = Number(fraSelect.value);
+      const claimAge = Number(ageSlider.value);
+      const lifeExpectancy = Number(lifeInput.value);
+      ageLabel.textContent = claimAge;
+      lifeLabel.textContent = lifeExpectancy;
+
+      const monthly = monthlyBenefit(pia, fra, claimAge);
+      const annual = monthly * 12;
+      const lifetimeCustom = lifetime(monthly, claimAge, lifeExpectancy);
+      const compareAge = Math.min(70, Math.max(claimAge, Math.round(fra)) + 1);
+      const compareBenefit = monthlyBenefit(pia, fra, compareAge);
+      const breakeven = breakEvenAge(claimAge, monthly, compareAge, compareBenefit);
+
+      metrics.innerHTML = `
+        <div class="metric">
+          <h4>Monthly benefit</h4>
+          <div class="value">${fmt(monthly)}</div>
+          <p class="helper">${pia ? ((monthly/pia - 1)*100).toFixed(1) + '% vs. FRA' : 'Set PIA to view change'}</p>
+        </div>
+        <div class="metric">
+          <h4>Annual benefit</h4>
+          <div class="value">${fmt(annual)}</div>
+          <p class="helper">Before taxes or COLA</p>
+        </div>
+          <div class="metric">
+            <h4>Lifetime to modeled age</h4>
+          <div class="value">${fmt(lifetimeCustom)}</div>
+          <p class="helper">Assumes steady dollars to age ${lifeExpectancy}</p>
+        </div>`;
+
+      if (breakeven) {
+        metrics.innerHTML += `
+          <div class="metric">
+            <h4>Break-even age</h4>
+            <div class="value">${breakeven.toFixed(1)}</div>
+            <p class="helper">Where claiming at ${claimAge} = claiming at ${compareAge}</p>
+          </div>`;
+      }
+
+      const ages = [62, 64, Math.round(fra), 67, 70];
+      const uniqueAges = [...new Set(ages)].sort((a,b) => a-b);
+
+      let html = '<table><thead><tr><th>Claim age</th><th>Monthly</th><th>Lifetime to 80</th><th>Lifetime to 85</th><th>Lifetime to 90</th></tr></thead><tbody>';
+      uniqueAges.forEach(age => {
+        const m = monthlyBenefit(pia, fra, age);
+        const row = `
+          <tr class="${age === claimAge ? 'highlight' : ''}">
+            <td>${age}${age === fra ? ' (FRA)' : ''}</td>
+            <td>${fmt(m)}</td>
+            <td>${fmt(lifetime(m, age, 80))}</td>
+            <td>${fmt(lifetime(m, age, 85))}</td>
+            <td>${fmt(lifetime(m, age, 90))}</td>
+          </tr>`;
+        html += row;
+      });
+      html += '</tbody></table><p class="helper">Illustration excludes tax and inflation effects; use official SSA statements for verified amounts.</p>';
+      tableWrap.innerHTML = html;
+    }
+
+    [piaInput, fraSelect, ageSlider, lifeInput].forEach(el => el.addEventListener('input', render));
+    render();
+  </script>
 </body>
 </html>
