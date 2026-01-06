@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSU Vesting Schedule Analysis: Master Tax Planning Around Concentrated Equity Events</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Helvetica Neue", Arial, sans-serif; background:#f7f9fb; color:#1f2937; line-height:1.6; padding:24px; }
+    .page { max-width: 1100px; margin:0 auto; background:#ffffff; border-radius:10px; box-shadow:0 12px 30px rgba(0,0,0,0.08); padding:36px; }
+    h1 { font-size:2.2rem; color:#0f2d52; margin-bottom:18px; line-height:1.25; }
+    h2 { font-size:1.5rem; color:#123f6a; margin:28px 0 12px; }
+    h3 { font-size:1.2rem; color:#1f2937; margin:20px 0 10px; }
+    p { margin-bottom:14px; }
+    ul { margin:14px 0 14px 22px; }
+    li { margin-bottom:8px; }
+    strong { font-weight:600; }
+    .tldr { background:linear-gradient(135deg,#1c64f2,#7c3aed); color:#fff; border-radius:10px; padding:20px; margin:24px 0; }
+    .tldr h2 { color:#fff; margin:0 0 10px; font-size:1.2rem; }
+    .tldr ul { list-style:none; margin:0; padding:0; }
+    .tldr li { padding-left:18px; position:relative; margin-bottom:10px; }
+    .tldr li:before { content:"›"; position:absolute; left:0; font-weight:bold; }
+    .section-card { background:#f0f4f8; border:1px solid #d7e1ea; border-radius:8px; padding:18px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px; }
+    .metric { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:16px; text-align:center; box-shadow:0 6px 16px rgba(15,45,82,0.08); }
+    .metric h4 { margin-bottom:6px; color:#123f6a; font-size:0.95rem; }
+    .metric .value { font-size:1.6rem; font-weight:700; color:#1c64f2; }
+    .chart-placeholder { background:#0f2d52; color:#e5edff; border-radius:10px; padding:18px; margin:12px 0; }
+    .disclaimer { background:#f5f5f5; border:1px solid #d1d5db; border-radius:8px; padding:16px; font-size:0.95rem; margin-top:28px; }
+    label { font-weight:600; color:#0f2d52; display:block; margin-top:14px; margin-bottom:6px; }
+    input, select { width:100%; padding:10px; border-radius:6px; border:1px solid #cbd5e0; font-size:1rem; }
+    input[type="range"] { width:100%; }
+    .helper { font-size:0.9rem; color:#4b5563; margin-bottom:10px; }
+    .table-wrap { overflow-x:auto; margin-top:16px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { padding:12px; border-bottom:1px solid #e5e7eb; text-align:left; }
+    th { background:#0f2d52; color:#fff; font-size:0.95rem; letter-spacing:0.3px; }
+    tr.highlight { background:#e0ebff; }
+    .faq dt { font-weight:700; margin-top:14px; color:#0f2d52; }
+    .faq dd { margin:6px 0 10px 0; }
+    .checklist { background:#f7fafc; border:1px solid #d7e1ea; border-radius:10px; padding:16px; margin:18px 0; }
+    .persona { background:#ffffff; border-left:4px solid #1c64f2; padding:14px; margin:14px 0; }
+    .warning { background:#fef3c7; border:1px solid #f59e0b; border-radius:8px; padding:14px; margin:14px 0; }
+    @media (max-width: 720px) {
+      body { padding:12px; }
+      .page { padding:22px; }
+      h1 { font-size:1.8rem; }
+      h2 { font-size:1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>RSU Vesting Schedule Analysis: Master Tax Planning Around Concentrated Equity Events</h1>
+
+    <div class="tldr">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Vesting schedules determine when RSUs become taxable income, creating predictable spikes in ordinary income that cascade into higher marginal rates, Alternative Minimum Tax exposure, and phase-outs of tax benefits.</li>
+        <li>Analyzing multi-year vesting patterns allows you to project peak tax years, model withholding adequacy, and identify opportunities for offsetting deductions or strategic loss harvesting.</li>
+        <li>Coordinating vesting schedules with retirement contributions, Roth conversions, charitable giving, and option exercises transforms scattered equity grants into a cohesive tax-minimization strategy.</li>
+      </ul>
+    </div>
+
+    <h2>Why vesting schedule analysis matters</h2>
+    <p>Restricted Stock Units vest according to a predetermined schedule, and each vesting event triggers ordinary income recognition at the fair market value on the vesting date. For executives and senior professionals receiving multiple overlapping grants, the cumulative tax burden can push effective rates beyond 50 percent when federal, state, Medicare surtax, and phase-out effects stack.</p>
+
+    <p>Without forward analysis, professionals may discover too late that withholding was insufficient, estimated tax payments were missed, or a single vesting event disqualified them from Roth IRA contributions or triggered Medicare IRMAA surcharges. Vesting schedule analysis surfaces these collisions early, enabling proactive adjustments rather than reactive tax surprises.</p>
+
+    <div class="checklist">
+      <strong>Documents and data to gather before analyzing:</strong>
+      <ul>
+        <li>Equity grant agreements showing vesting dates, share counts, and any performance conditions.</li>
+        <li>Employer stock plan portal showing all outstanding grants and projected vesting events.</li>
+        <li>Year-to-date W-2 or pay stub data to baseline current income and withholding.</li>
+        <li>Tax returns for prior two years to understand baseline marginal rates and deduction patterns.</li>
+        <li>Expected base salary, bonuses, and any deferred compensation distributions for the analysis horizon.</li>
+      </ul>
+    </div>
+
+    <h2>How RSU vesting schedules work</h2>
+    <p><strong>Grant date:</strong> The date the company promises RSUs to you. No tax event occurs at grant.</p>
+
+    <p><strong>Vesting schedule types:</strong> Most RSU grants follow one of these patterns:</p>
+    <ul>
+      <li><strong>Cliff vesting:</strong> All shares vest on a single date, typically after one to three years. Common in sign-on or retention grants.</li>
+      <li><strong>Graded vesting:</strong> Shares vest in installments over time, such as 25 percent annually over four years. This is the most common structure for ongoing annual refresh grants.</li>
+      <li><strong>Performance vesting:</strong> Vesting depends on achieving company metrics or stock price targets. The timing and amount can vary significantly.</li>
+      <li><strong>Hybrid schedules:</strong> Some grants combine a one-year cliff followed by quarterly or monthly vesting thereafter.</li>
+    </ul>
+
+    <p><strong>Tax recognition at vesting:</strong> On each vesting date, the fair market value of the shares becomes ordinary income subject to federal, state, Social Security, Medicare, and any local taxes. Employers typically withhold shares to cover taxes, using statutory rates that may not match your actual liability.</p>
+
+    <p><strong>Post-vesting holding:</strong> After vesting, any appreciation or depreciation in share value is treated as capital gain or loss when you sell. The vesting-date value becomes your cost basis.</p>
+
+    <h3>Overlapping grants create cumulative tax exposure</h3>
+    <p>When annual refresh grants overlap with sign-on or promotion grants, multiple vesting events can concentrate in a single calendar year. A professional with three overlapping four-year grants may face six or more vesting events annually, each adding tens or hundreds of thousands of dollars to taxable income.</p>
+
+    <p>This stacking effect can push income into the top federal bracket, trigger the 3.8 percent Net Investment Income Tax, reduce qualified business income deductions, phase out retirement contribution eligibility, or increase Medicare Part B and D premiums two years later through IRMAA.</p>
+
+    <h2>Interactive vesting schedule analyzer</h2>
+    <div class="section-card">
+      <p class="helper">Model your vesting events over a multi-year horizon to identify peak tax years and estimate cumulative income. This tool simplifies assumptions to isolate the income-concentration effect; actual tax liability depends on deductions, credits, state rules, and share price movement.</p>
+
+      <label for="baseIncome">Base salary and bonus (annual)</label>
+      <input type="number" id="baseIncome" value="250000" min="50000" max="2000000" step="10000">
+
+      <label for="grant1Shares">Grant 1: Total shares</label>
+      <input type="number" id="grant1Shares" value="4000" min="0" max="50000" step="100">
+
+      <label for="grant1Price">Grant 1: Current share price</label>
+      <input type="number" id="grant1Price" value="150" min="1" max="1000" step="5">
+
+      <label for="grant1Schedule">Grant 1: Vesting schedule</label>
+      <select id="grant1Schedule">
+        <option value="annual4">25% annually over 4 years</option>
+        <option value="annual3">33.3% annually over 3 years</option>
+        <option value="cliff1">100% cliff at year 1</option>
+        <option value="cliff2">100% cliff at year 2</option>
+        <option value="quarterly4">6.25% quarterly over 4 years</option>
+      </select>
+
+      <label for="grant2Shares">Grant 2: Total shares (optional, set to 0 to exclude)</label>
+      <input type="number" id="grant2Shares" value="2000" min="0" max="50000" step="100">
+
+      <label for="grant2Price">Grant 2: Current share price</label>
+      <input type="number" id="grant2Price" value="150" min="1" max="1000" step="5">
+
+      <label for="grant2Schedule">Grant 2: Vesting schedule</label>
+      <select id="grant2Schedule">
+        <option value="annual4">25% annually over 4 years</option>
+        <option value="annual3">33.3% annually over 3 years</option>
+        <option value="cliff1">100% cliff at year 1</option>
+        <option value="cliff2">100% cliff at year 2</option>
+        <option value="quarterly4">6.25% quarterly over 4 years</option>
+      </select>
+
+      <label for="marginalRate">Estimated combined marginal tax rate (%)</label>
+      <input type="range" id="marginalRate" min="25" max="55" value="42" step="1">
+      <p class="helper">Selected rate: <strong id="rateLabel">42</strong>% (includes federal, state, Medicare surtax)</p>
+
+      <div class="grid" id="summaryMetrics"></div>
+
+      <div class="table-wrap" id="yearlyTable"></div>
+    </div>
+
+    <div class="chart-placeholder">
+      <h3>Suggested visualization: annual income stacking</h3>
+      <p>Create a stacked bar chart with years on the x-axis and income on the y-axis. Each bar shows base income at the bottom and RSU vesting income stacked on top, color-coded by grant. Add a horizontal line marking key tax thresholds such as the top federal bracket entry point, IRMAA tier boundaries, or AMT exemption phase-out zones. This visualization immediately reveals which years will experience tax-rate spikes and where planning intervention may help.</p>
+    </div>
+
+    <h2>Real-world scenarios</h2>
+
+    <div class="persona">
+      <h3>The Pre-IPO Tech Executive</h3>
+      <p><strong>Profile:</strong> Mid-40s VP at a pre-IPO company, $300K–$400K base plus annual RSU grants totaling 15,000 shares across three overlapping four-year schedules. Retirement assets $1.5M–$2.5M.</p>
+      <p><strong>Application:</strong> Prior to IPO, RSUs vest but have limited liquidity. Post-IPO, vesting events can generate $500K+ of annual income in a single quarter. Modeling the vesting calendar identifies the quarters when withholding may fall short and allows the executive to build cash reserves, plan estimated payments, or accelerate charitable contributions to offset the spike.</p>
+    </div>
+
+    <div class="persona">
+      <h3>The Dual-Income Professional Couple</h3>
+      <p><strong>Profile:</strong> Late 30s couple, combined W-2 income $400K–$600K. One spouse receives annual RSU grants; vesting adds $80K–$150K per year. Portfolio $800K–$1.2M.</p>
+      <p><strong>Application:</strong> Overlapping vesting events push the household into higher brackets and may phase out traditional IRA deductibility or Roth IRA eligibility. Analyzing the schedule allows them to front-load backdoor Roth conversions in lower-income years, harvest losses before large vesting events, or time option exercises to avoid double-stacking income.</p>
+    </div>
+
+    <div class="persona">
+      <h3>The Late-Career Retention Grant Recipient</h3>
+      <p><strong>Profile:</strong> Late 50s director receiving a large retention grant with a two-year cliff vesting $400K–$700K. Base income $250K–$350K. Retirement assets $3M–$5M. Plans to retire within five years.</p>
+      <p><strong>Application:</strong> The cliff vesting year will spike income, potentially triggering top marginal rates and IRMAA surcharges two years later. Coordinating the vesting year with charitable giving via donor-advised funds, deferring bonuses if possible, or timing Medicare enrollment can reduce the effective tax rate and preserve qualified healthcare subsidy eligibility if applicable.</p>
+    </div>
+
+    <h2>Risks, nuance, and the cost of missing the analysis</h2>
+    <p>Vesting schedules interact with tax law in ways that are difficult to reverse. Common risks include:</p>
+
+    <ul>
+      <li><strong>Withholding gaps:</strong> Employers typically withhold at 22 percent federal supplemental wage rate, but your marginal rate may exceed 40 percent when state and Medicare surtax apply. Underpayment penalties and year-end tax bills can reach five or six figures.</li>
+      <li><strong>AMT exposure:</strong> If you hold Incentive Stock Options alongside RSUs, large vesting events can push income into AMT territory, reducing the value of deductions and credits.</li>
+      <li><strong>IRMAA timing:</strong> Medicare Part B and D premiums are determined by income from two years prior. A spike in year one triggers higher premiums in year three, even if income normalizes.</li>
+      <li><strong>Qualified plan contribution limits:</strong> High W-2 income from vesting may disqualify you from deductible traditional IRA contributions or direct Roth IRA contributions, requiring backdoor Roth strategies or after-tax 401(k) contributions.</li>
+      <li><strong>State tax traps:</strong> Some states tax vesting income even if you no longer reside there, depending on where services were performed. Multi-state professionals need allocation analysis to avoid double taxation.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Performance vesting uncertainty:</strong> For grants tied to company metrics or stock price targets, vesting dates and share counts may be unknown until close to the event. Build scenarios for minimum, target, and maximum vesting outcomes to stress-test tax impact and liquidity needs.
+    </div>
+
+    <h2>From tactic to strategy: the planning horizon</h2>
+    <p>Vesting schedule analysis is most valuable when extended across a multi-year window that includes retirement contributions, option exercises, bonuses, real estate transactions, and potential job changes. Annual recalibration ensures new grants, stock price changes, and tax law updates are incorporated.</p>
+
+    <p>Strategic applications include:</p>
+    <ul>
+      <li><strong>Loss harvesting timing:</strong> Harvest tax losses in your portfolio in the months before large vesting events to offset ordinary income up to $3,000 annually and carry forward excess losses.</li>
+      <li><strong>Roth conversion pacing:</strong> Execute Roth conversions in years with lower vesting income to fill lower brackets before RMDs begin.</li>
+      <li><strong>Charitable contribution bunching:</strong> Concentrate multiple years of charitable giving into high-vesting years using donor-advised funds to maximize itemized deduction value.</li>
+      <li><strong>Option exercise coordination:</strong> Avoid exercising Incentive Stock Options or Non-Qualified Stock Options in the same year as large RSU vesting to prevent double-stacking ordinary income.</li>
+      <li><strong>Estimated tax planning:</strong> Calculate quarterly estimated payments based on projected vesting events to avoid underpayment penalties.</li>
+    </ul>
+
+    <h2>Where fiduciary guidance adds value</h2>
+    <p>Spreadsheet projections can map vesting dates and estimate income, but comprehensive planning integrates equity compensation with retirement account strategies, tax-bracket management, estate planning, and portfolio diversification. A fiduciary advisor can model cross-year scenarios, test sensitivity to stock price changes, and coordinate with tax preparers to ensure withholding, estimated payments, and year-end adjustments align.</p>
+
+    <p>For professionals with complex situations—multiple grant types, multi-state work history, performance vesting conditions, or concentrated single-stock risk—DIY analysis may miss interdependencies. Advisors can also facilitate same-day sales or cashless exercise strategies to manage concentration risk without triggering unnecessary tax acceleration.</p>
+
+    <p class="helper">Practical collaboration approach: upload grant agreements and vesting schedules, project income through retirement, model tax under different scenarios, review quarterly as grants are issued or stock price moves, and coordinate with your CPA to true-up withholding and estimated payments each quarter.</p>
+
+    <dl class="faq">
+      <dt>How do I get accurate vesting dates for all my grants?</dt>
+      <dd>Log into your employer's equity compensation portal (commonly E*TRADE, Fidelity, Schwab, or Morgan Stanley). Most portals provide a calendar view showing all future vesting events. Export the data or take screenshots to feed into your analysis.</dd>
+
+      <dt>What if the stock price changes significantly before vesting?</dt>
+      <dd>Taxable income is determined by the fair market value on the actual vesting date, not the grant date or current price. Model scenarios at different price points to stress-test tax liability. If the price drops, your tax bill will be lower; if it rises, your tax and potential concentration risk both increase.</dd>
+
+      <dt>Can I defer RSU vesting to reduce taxes?</dt>
+      <dd>Most RSU plans do not permit deferral; vesting triggers immediate income recognition. Some companies offer deferred compensation plans separately, but these come with forfeiture risk and restrictive distribution rules. Confirm plan terms with your benefits team before assuming flexibility.</dd>
+
+      <dt>How does vesting interact with company stock ownership guidelines?</dt>
+      <dd>Many companies require executives to hold a multiple of base salary in company stock. Vesting events may satisfy these guidelines, but tax and diversification goals may conflict with holding requirements. Analysis should account for required hold periods and phase-out timelines as you approach retirement.</dd>
+    </dl>
+
+    <div class="disclaimer">
+      <strong>Compliance note:</strong> This material is educational and does not constitute individualized tax, legal, or investment advice. RSU tax treatment depends on plan design, grant agreements, state tax rules, and individual circumstances. Tax law is subject to change. Consult with a qualified tax advisor and review your specific grant documents before making decisions. Securities involve risk, including possible loss of principal.
+    </div>
+  </div>
+
+  <script>
+    const baseIncomeInput = document.getElementById('baseIncome');
+    const grant1SharesInput = document.getElementById('grant1Shares');
+    const grant1PriceInput = document.getElementById('grant1Price');
+    const grant1ScheduleSelect = document.getElementById('grant1Schedule');
+    const grant2SharesInput = document.getElementById('grant2Shares');
+    const grant2PriceInput = document.getElementById('grant2Price');
+    const grant2ScheduleSelect = document.getElementById('grant2Schedule');
+    const marginalRateSlider = document.getElementById('marginalRate');
+    const rateLabel = document.getElementById('rateLabel');
+    const summaryMetrics = document.getElementById('summaryMetrics');
+    const yearlyTable = document.getElementById('yearlyTable');
+
+    function getVestingPattern(scheduleType) {
+      const patterns = {
+        'annual4': [0.25, 0.25, 0.25, 0.25],
+        'annual3': [0.333, 0.333, 0.334],
+        'cliff1': [1.0],
+        'cliff2': [0, 1.0],
+        'quarterly4': new Array(16).fill(0.0625)
+      };
+      return patterns[scheduleType] || [0.25, 0.25, 0.25, 0.25];
+    }
+
+    function aggregateByYear(pattern) {
+      const yearlyPct = [0, 0, 0, 0, 0];
+      pattern.forEach((pct, idx) => {
+        const year = Math.floor(idx / (pattern.length > 4 ? 4 : 1));
+        if (year < 5) yearlyPct[year] += pct;
+      });
+      return yearlyPct.slice(0, Math.max(4, Math.ceil(pattern.length / 4)));
+    }
+
+    function calculateVesting() {
+      const baseIncome = Number(baseIncomeInput.value) || 0;
+      const grant1Shares = Number(grant1SharesInput.value) || 0;
+      const grant1Price = Number(grant1PriceInput.value) || 0;
+      const grant1Schedule = grant1ScheduleSelect.value;
+      const grant2Shares = Number(grant2SharesInput.value) || 0;
+      const grant2Price = Number(grant2PriceInput.value) || 0;
+      const grant2Schedule = grant2ScheduleSelect.value;
+      const marginalRate = Number(marginalRateSlider.value) || 0;
+
+      rateLabel.textContent = marginalRate;
+
+      const pattern1 = aggregateByYear(getVestingPattern(grant1Schedule));
+      const pattern2 = aggregateByYear(getVestingPattern(grant2Schedule));
+      const maxYears = Math.max(pattern1.length, pattern2.length);
+
+      const yearData = [];
+      let totalRsuIncome = 0;
+      let peakYear = 0;
+      let peakIncome = 0;
+
+      for (let year = 0; year < maxYears; year++) {
+        const vest1 = (pattern1[year] || 0) * grant1Shares * grant1Price;
+        const vest2 = (pattern2[year] || 0) * grant2Shares * grant2Price;
+        const rsuIncome = vest1 + vest2;
+        const totalIncome = baseIncome + rsuIncome;
+        const estimatedTax = totalIncome * (marginalRate / 100);
+
+        totalRsuIncome += rsuIncome;
+        if (totalIncome > peakIncome) {
+          peakIncome = totalIncome;
+          peakYear = year + 1;
+        }
+
+        yearData.push({
+          year: year + 1,
+          baseIncome,
+          rsuIncome,
+          totalIncome,
+          estimatedTax
+        });
+      }
+
+      const totalTax = yearData.reduce((sum, y) => sum + y.estimatedTax, 0);
+
+      summaryMetrics.innerHTML = `
+        <div class="metric">
+          <h4>Total RSU income</h4>
+          <div class="value">${fmt(totalRsuIncome)}</div>
+          <p class="helper">Over ${maxYears} years</p>
+        </div>
+        <div class="metric">
+          <h4>Peak annual income</h4>
+          <div class="value">${fmt(peakIncome)}</div>
+          <p class="helper">Year ${peakYear}</p>
+        </div>
+        <div class="metric">
+          <h4>Estimated total tax</h4>
+          <div class="value">${fmt(totalTax)}</div>
+          <p class="helper">At ${marginalRate}% rate</p>
+        </div>
+      `;
+
+      let tableHtml = `<table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Base income</th>
+            <th>RSU vesting income</th>
+            <th>Total income</th>
+            <th>Est. tax</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+      yearData.forEach(y => {
+        const isHighlight = y.totalIncome === peakIncome;
+        tableHtml += `
+          <tr class="${isHighlight ? 'highlight' : ''}">
+            <td>Year ${y.year}</td>
+            <td>${fmt(y.baseIncome)}</td>
+            <td>${fmt(y.rsuIncome)}</td>
+            <td>${fmt(y.totalIncome)}</td>
+            <td>${fmt(y.estimatedTax)}</td>
+          </tr>`;
+      });
+
+      tableHtml += `</tbody></table>
+        <p class="helper" style="margin-top:12px;">Illustration assumes constant share price and does not account for actual withholding, deductions, or credits. Actual tax liability will vary based on filing status, state rules, and other income sources.</p>`;
+
+      yearlyTable.innerHTML = tableHtml;
+    }
+
+    function fmt(num) {
+      return num.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    }
+
+    [baseIncomeInput, grant1SharesInput, grant1PriceInput, grant1ScheduleSelect,
+     grant2SharesInput, grant2PriceInput, grant2ScheduleSelect, marginalRateSlider]
+      .forEach(el => el.addEventListener('input', calculateVesting));
+
+    calculateVesting();
+  </script>
+</body>
+</html>
