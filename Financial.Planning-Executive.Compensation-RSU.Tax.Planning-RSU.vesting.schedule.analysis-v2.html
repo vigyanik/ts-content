@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSU Vesting Schedule Analysis: Convert Equity Timelines into Tax-Aware Cash Flow Plans</title>
+  <style>
+    :root {
+      --navy:#0f2439;
+      --sky:#1c64f2;
+      --slate:#1f2937;
+      --frost:#f4f7fb;
+      --card:#ffffff;
+      --border:#d7e1ea;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"Helvetica Neue", Arial, sans-serif; background:var(--frost); color:var(--slate); line-height:1.6; padding:24px; }
+    .page { max-width:1100px; margin:0 auto; background:var(--card); border-radius:12px; box-shadow:0 14px 32px rgba(0,0,0,0.08); padding:36px; }
+    h1 { font-size:2.2rem; color:var(--navy); margin-bottom:18px; line-height:1.25; }
+    h2 { font-size:1.5rem; color:#123f6a; margin:26px 0 12px; }
+    h3 { font-size:1.2rem; color:var(--navy); margin:18px 0 8px; }
+    p { margin-bottom:14px; }
+    ul { margin:14px 0 14px 22px; }
+    li { margin-bottom:8px; }
+    strong { font-weight:650; }
+    .tldr { background:linear-gradient(120deg,#1c64f2,#7c3aed); color:#fff; border-radius:12px; padding:20px; margin:24px 0; }
+    .tldr h2 { color:#fff; margin:0 0 10px; font-size:1.15rem; }
+    .tldr ul { list-style:none; margin:0; padding:0; }
+    .tldr li { padding-left:18px; position:relative; margin-bottom:10px; }
+    .tldr li:before { content:"›"; position:absolute; left:0; font-weight:bold; }
+    .section-card { background:#f0f4f8; border:1px solid var(--border); border-radius:10px; padding:18px; margin:18px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:12px; }
+    .metric { background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:14px; text-align:center; box-shadow:0 6px 14px rgba(15,45,82,0.08); }
+    .metric h4 { margin-bottom:6px; color:#123f6a; font-size:0.95rem; }
+    .metric .value { font-size:1.6rem; font-weight:750; color:var(--sky); }
+    .chart-placeholder { background:var(--navy); color:#e5edff; border-radius:10px; padding:16px; margin:14px 0; }
+    .persona { background:#fff; border-left:4px solid var(--sky); padding:14px; margin:12px 0; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    .warning { background:#fef3c7; border:1px solid #f59e0b; border-radius:10px; padding:14px; margin:14px 0; }
+    label { font-weight:650; color:var(--navy); display:block; margin-top:12px; margin-bottom:6px; }
+    input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #cbd5e0; font-size:1rem; }
+    input[type="range"] { width:100%; }
+    .helper { font-size:0.9rem; color:#4b5563; margin-bottom:8px; }
+    .table-wrap { overflow-x:auto; margin-top:12px; }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { padding:10px; border-bottom:1px solid #e5e7eb; text-align:left; }
+    th { background:var(--navy); color:#fff; font-size:0.95rem; letter-spacing:0.3px; }
+    .faq dt { font-weight:750; margin-top:10px; color:var(--navy); }
+    .faq dd { margin:4px 0 10px 0; }
+    .disclaimer { background:#f5f5f5; border:1px solid #d1d5db; border-radius:10px; padding:16px; font-size:0.95rem; margin-top:26px; }
+    @media (max-width: 720px) {
+      body { padding:14px; }
+      .page { padding:22px; }
+      h1 { font-size:1.85rem; }
+      h2 { font-size:1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>RSU Vesting Schedule Analysis: Convert Equity Timelines into Tax-Aware Cash Flow Plans</h1>
+
+    <div class="tldr">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>Each vesting date is a taxable income event; mapping them across years helps prevent bracket creep, AMT exposure, and Medicare IRMAA surprises.</li>
+        <li>Coordinating RSU income with retirement contributions, charitable bunching, and capital-loss harvesting can improve after-tax outcomes and diversify concentrated stock positions.</li>
+        <li>Scenario modeling—by grant, share price, and withholding—turns a static equity award chart into a living plan for liquidity, estimated taxes, and risk management.</li>
+      </ul>
+    </div>
+
+    <h2>Why an RSU vesting calendar deserves strategic attention</h2>
+    <p>Restricted Stock Units convert to income on their vesting dates at the fair market value of the shares. For executives and senior contributors, overlapping grants often stack multiple vesting events into the same calendar year, creating sizable ordinary income that ripples across tax brackets, surtaxes, retirement plan eligibility, and cash flow.</p>
+    <p>Proactive analysis allows you to quantify those spikes, test whether employer withholding will be sufficient, and time offsetting moves—such as donor-advised fund contributions or loss harvesting—before the window closes. Without that map, surprises can include underpayment penalties, loss of direct Roth IRA eligibility, or higher Medicare premiums two years later.</p>
+
+    <div class="section-card">
+      <strong>Data to gather before running the analysis:</strong>
+      <ul>
+        <li>Grant agreements showing vesting dates, share counts, and any performance hurdles.</li>
+        <li>Latest share price and volatility range to build low/target/high scenarios.</li>
+        <li>Projected base salary, bonuses, ESPP purchases, and any option exercises.</li>
+        <li>Recent tax return and current paystub withholding to test sufficiency.</li>
+      </ul>
+    </div>
+
+    <h2>How vesting mechanics translate to taxes</h2>
+    <p><strong>Grant date vs. vest date:</strong> No tax is due at grant. Income is recognized when shares vest, even if you continue holding them. The vest-date value becomes your cost basis for future capital gains.</p>
+    <p><strong>Withholding gap:</strong> Employers commonly withhold at supplemental wage rates (22 percent federal up to a threshold, 37 percent above) and often a flat state rate. High earners with surtaxes and deductions phase-outs frequently owe more than what was withheld.</p>
+    <p><strong>Post-vesting choices:</strong> Selling immediately locks in ordinary income only. Holding introduces capital gain/loss risk and concentrated position risk; long-term gains require a one-year holding period after vest.</p>
+
+    <h3>Overlapping grants magnify the effect</h3>
+    <p>Annual refresh grants plus one-time sign-on or retention awards can create six to eight vesting events per year. When share prices rise, each event increases W-2 income and may:</p>
+    <ul>
+      <li>Push marginal rates higher and trigger the 3.8 percent Net Investment Income Tax.</li>
+      <li>Phase out deductions or credits (child tax credit, qualified business income deduction, or IRA deductibility).</li>
+      <li>Influence Medicare IRMAA tiers two years later, raising Part B and D premiums.</li>
+    </ul>
+
+    <div class="chart-placeholder">
+      <h3>Suggested visualization: stacked income vs. tax thresholds</h3>
+      <p>Create a stacked bar chart with years on the x-axis and dollars on the y-axis. Show base salary/bonus at the bottom and RSU income stacked by grant on top. Overlay horizontal lines for marginal bracket breakpoints, NIIT threshold, and IRMAA tiers. Highlight years where stacked income crosses a threshold to prioritize planning moves.</p>
+    </div>
+
+    <h2>Interactive: model two grants and project taxable income</h2>
+    <p>Use this quick estimator to compare how different schedules and share prices change ordinary income by year. Adjust the marginal rate slider to see withholding gaps.</p>
+
+    <div class="section-card">
+      <label for="baseIncome">Annual base salary and bonus ($)</label>
+      <input type="number" id="baseIncome" value="350000" min="0" step="1000">
+
+      <label for="grant1Shares">Grant 1: total shares</label>
+      <input type="number" id="grant1Shares" value="8000" min="0" step="100">
+
+      <label for="grant1Price">Grant 1: current share price ($)</label>
+      <input type="number" id="grant1Price" value="150" min="1" step="5">
+
+      <label for="grant1Schedule">Grant 1 vesting schedule</label>
+      <select id="grant1Schedule">
+        <option value="annual4">25% annually over 4 years</option>
+        <option value="annual3">33.3% annually over 3 years</option>
+        <option value="cliff1">100% cliff at year 1</option>
+        <option value="quarterly4">6.25% quarterly over 4 years</option>
+      </select>
+
+      <label for="grant2Shares">Grant 2: total shares (optional, set to 0 to ignore)</label>
+      <input type="number" id="grant2Shares" value="4000" min="0" step="100">
+
+      <label for="grant2Price">Grant 2: current share price ($)</label>
+      <input type="number" id="grant2Price" value="150" min="1" step="5">
+
+      <label for="grant2Schedule">Grant 2 vesting schedule</label>
+      <select id="grant2Schedule">
+        <option value="annual4">25% annually over 4 years</option>
+        <option value="annual3">33.3% annually over 3 years</option>
+        <option value="cliff1">100% cliff at year 1</option>
+        <option value="quarterly4">6.25% quarterly over 4 years</option>
+      </select>
+
+      <label for="marginalRate">Estimated combined marginal tax rate (%)</label>
+      <input type="range" id="marginalRate" min="25" max="55" value="42" step="1">
+      <p class="helper">Selected rate: <strong id="rateLabel">42</strong>% (federal, state, Medicare surtax combined)</p>
+
+      <div class="grid" id="summaryMetrics"></div>
+      <div class="table-wrap" id="yearlyTable"></div>
+    </div>
+
+    <h2>Real-world personas</h2>
+    <div class="persona">
+      <h3>The Pre-IPO Leader</h3>
+      <p><strong>Profile:</strong> Mid-40s VP with three overlapping four-year grants totaling 12,000–18,000 shares; base compensation $300K–$450K; liquid assets $1.5M–$2.5M.</p>
+      <p><strong>Application:</strong> Prior to liquidity, withholding may be minimal. Post-IPO, quarterly vesting could add $400K–$700K of W-2 income. Building cash for estimated payments, staging donor-advised fund contributions, and diversifying promptly after lock-up reduce concentrated risk and unexpected tax bills.</p>
+    </div>
+    <div class="persona">
+      <h3>The Dual-Income Couple</h3>
+      <p><strong>Profile:</strong> Late-30s professionals, combined W-2 income $400K–$600K. One spouse receives annual RSU refreshes worth $80K–$150K per year. Investable portfolio $900K–$1.3M.</p>
+      <p><strong>Application:</strong> Mapping vesting against childcare credit thresholds and Roth IRA limits guides whether to use backdoor Roth conversions, accelerate 529 funding, or shift bonuses to a lower-income year. Tax-aware selling also funds portfolio diversification.</p>
+    </div>
+    <div class="persona">
+      <h3>The Late-Career Retention Grant Recipient</h3>
+      <p><strong>Profile:</strong> Early 60s director offered a two-year cliff grant valued at $500K–$900K while planning retirement in three to five years.</p>
+      <p><strong>Application:</strong> The cliff year may push income into top brackets and elevate IRMAA two years later. Coordinated timing of Medicare enrollment, charitable bunching, and partial Roth conversions in pre-cliff years can smooth the tax curve.</p>
+    </div>
+
+    <h2>Risks, nuance, and the cost of mis-timing</h2>
+    <p>Equity-driven income is lumpy. Missing the timing can lead to underpayment penalties or unplanned cash drains. Key risks include:</p>
+    <ul>
+      <li><strong>Withholding shortfalls:</strong> Statutory rates may under-withhold by 10–20 percentage points for high earners; add estimated payments on vest dates to avoid penalties.</li>
+      <li><strong>State sourcing rules:</strong> Moving between states does not always sever tax liability on prior service; track workdays to document sourcing.</li>
+      <li><strong>Performance-vesting uncertainty:</strong> Shares tied to revenue or price targets may cluster unexpectedly; build best/mid/worst scenarios.</li>
+      <li><strong>Concentration risk:</strong> Holding vested shares maintains correlation with employment risk; pre-set 10b5-1 plans can automate disciplined selling.</li>
+    </ul>
+
+    <div class="warning">
+      <strong>Planning checkpoint:</strong> Before a high-value vest, review cash reserves for estimated payments, rebalance concentrated holdings, and confirm whether selling shares will trigger blackout or insider restrictions.
+    </div>
+
+    <h2>From tactic to strategy: building the planning horizon</h2>
+    <p>Annual spreadsheets help, but true value comes from a rolling three-to-five-year view that integrates vesting with retirement contributions, option exercises, real estate transactions, and potential career moves. Refresh the analysis at least annually to reflect new grants and price changes.</p>
+    <p>Strategic moves to consider:</p>
+    <ul>
+      <li><strong>Loss harvesting cadence:</strong> Pre-position losses before heavy vesting quarters to offset capital gains or up to $3,000 of ordinary income.</li>
+      <li><strong>Charitable bunching and donor-advised funds:</strong> Concentrate gifting in high-income years to maximize deduction value while reducing position size.</li>
+      <li><strong>Roth conversion pacing:</strong> Execute conversions in lighter vesting years to fill lower brackets before required minimum distributions begin.</li>
+      <li><strong>Estimated tax safe harbors:</strong> Use the 110 percent prior-year safe harbor or event-based estimated payments to avoid penalties when income is volatile.</li>
+    </ul>
+
+    <h2>Where fiduciary guidance adds value</h2>
+    <p>DIY spreadsheets can track dates and share counts, but coordinating equity income with taxes, retirement savings, estate design, and diversification often benefits from a fiduciary lens. An independent advisor can model sensitivity to price swings, test withholding across jurisdictions, coordinate with CPAs on safe-harbor payments, and design 10b5-1 selling plans that balance liquidity with insider constraints.</p>
+    <p>For highly concentrated positions or complex multi-state situations, a Registered Investment Advisor can also integrate charitable strategies, family gifting, and portfolio risk controls that extend beyond a single vesting year.</p>
+
+    <h2>FAQs</h2>
+    <dl class="faq">
+      <dt>Does the vesting date or the sell date drive W-2 income?</dt>
+      <dd>W-2 income is set on the vesting date at fair market value. Selling later creates a capital gain or loss relative to that basis.</dd>
+      <dt>How often should I update the analysis?</dt>
+      <dd>At least annually, and after any new grant, promotion, relocation, or major stock price move. Fresh assumptions keep estimated taxes and cash planning accurate.</dd>
+      <dt>Can I defer RSU income?</dt>
+      <dd>RSUs generally cannot be deferred once vesting conditions are met. Some employers offer separate deferred compensation plans, but RSUs themselves are usually fixed.</dd>
+    </dl>
+
+    <div class="disclaimer">
+      This material is for educational purposes only and does not constitute tax, legal, or investment advice. Equity compensation outcomes depend on individual circumstances, including tax status, residency, and employer plan rules. Consult your tax advisor and fiduciary financial planner before implementing any strategy.
+    </div>
+  </div>
+
+  <script>
+    const schedules = {
+      annual4: [0.25,0.25,0.25,0.25],
+      annual3: [0.3333,0.3333,0.3334],
+      cliff1: [1],
+      quarterly4: Array(16).fill(1/16)
+    };
+
+    const baseIncomeEl = document.getElementById('baseIncome');
+    const g1SharesEl = document.getElementById('grant1Shares');
+    const g1PriceEl = document.getElementById('grant1Price');
+    const g1ScheduleEl = document.getElementById('grant1Schedule');
+    const g2SharesEl = document.getElementById('grant2Shares');
+    const g2PriceEl = document.getElementById('grant2Price');
+    const g2ScheduleEl = document.getElementById('grant2Schedule');
+    const marginalRateEl = document.getElementById('marginalRate');
+    const rateLabel = document.getElementById('rateLabel');
+    const summaryMetrics = document.getElementById('summaryMetrics');
+    const yearlyTable = document.getElementById('yearlyTable');
+
+    function scheduleToYears(schedule) {
+      const perYear = {};
+      schedule.forEach((fraction, idx) => {
+        const year = Math.floor(idx / 4) + 1; // for quarterly schedules, group by year; for annual, year increments naturally
+        perYear[year] = (perYear[year] || 0) + fraction;
+      });
+      return perYear;
+    }
+
+    function project() {
+      const baseIncome = Number(baseIncomeEl.value) || 0;
+      const g1Shares = Number(g1SharesEl.value) || 0;
+      const g1Price = Number(g1PriceEl.value) || 0;
+      const g2Shares = Number(g2SharesEl.value) || 0;
+      const g2Price = Number(g2PriceEl.value) || 0;
+      const marginal = Number(marginalRateEl.value) || 0;
+      rateLabel.textContent = marginal.toString();
+
+      const g1Years = scheduleToYears(schedules[g1ScheduleEl.value]);
+      const g2Years = scheduleToYears(schedules[g2ScheduleEl.value]);
+      const horizon = Math.max(
+        Math.max(...Object.keys(g1Years).map(Number)),
+        Math.max(...Object.keys(g2Years).map(Number))
+      );
+
+      let rows = '';
+      let totals = {income:0, rsu:0, tax:0};
+
+      for (let year=1; year<=horizon; year++) {
+        const g1Vest = (g1Years[year] || 0) * g1Shares * g1Price;
+        const g2Vest = (g2Years[year] || 0) * g2Shares * g2Price;
+        const rsuIncome = g1Vest + g2Vest;
+        const totalIncome = baseIncome + rsuIncome;
+        const estTax = totalIncome * (marginal/100);
+        rows += `<tr><td>Year ${year}</td><td>$${totalIncome.toLocaleString()}</td><td>$${rsuIncome.toLocaleString()}</td><td>$${estTax.toLocaleString()}</td></tr>`;
+        totals.income += totalIncome;
+        totals.rsu += rsuIncome;
+        totals.tax += estTax;
+      }
+
+      yearlyTable.innerHTML = `
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Year</th><th>Projected total income</th><th>RSU income</th><th>Estimated tax at selected rate</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>`;
+
+      summaryMetrics.innerHTML = `
+        <div class="metric"><h4>Total projected income (${horizon} yrs)</h4><div class="value">$${Math.round(totals.income).toLocaleString()}</div></div>
+        <div class="metric"><h4>RSU-driven income</h4><div class="value">$${Math.round(totals.rsu).toLocaleString()}</div></div>
+        <div class="metric"><h4>Estimated tax at selected rate</h4><div class="value">$${Math.round(totals.tax).toLocaleString()}</div></div>
+      `;
+    }
+
+    ['input','change'].forEach(evt => {
+      baseIncomeEl.addEventListener(evt, project);
+      g1SharesEl.addEventListener(evt, project);
+      g1PriceEl.addEventListener(evt, project);
+      g1ScheduleEl.addEventListener(evt, project);
+      g2SharesEl.addEventListener(evt, project);
+      g2PriceEl.addEventListener(evt, project);
+      g2ScheduleEl.addEventListener(evt, project);
+      marginalRateEl.addEventListener(evt, project);
+    });
+
+    project();
+  </script>
+</body>
+</html>
